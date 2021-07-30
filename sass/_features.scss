@@ -1,17 +1,28 @@
 .features {
-  background-color: $color-grey-light-2;
   grid-column: center-start / center-end;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  // grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
   grid-gap: 6rem;
+  align-items: start;
 }
 
-.container {
+.feature {
   display: grid;
-  //min-content = auto
-  grid-template-rows: 80vh auto 40vw repeat(3, min-content);
-  grid-template-columns:
-    [sidebar-start] 8rem [sidebar-end full-start] minmax(6rem, 1fr)
-    [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end])
-    [center-end] minmax(6rem, 1fr) [full-end];
+  grid-template-columns: min-content 1fr;
+
+  grid-gap: 0 2.5rem;
+  &__icon {
+    fill: $color-primary;
+    width: 4.5rem;
+    height: 4.5rem;
+    //-1 nd of Explicit grid
+    //work only with Explicit Grids
+    transform: translateY(-1rem);
+  }
+
+  &__text {
+    font-size: 1.7rem;
+    grid-column: 2/3;
+  }
 }
