@@ -6,12 +6,22 @@
   align-content: center;
   row-gap: 3rem;
   justify-items: center;
+  @media only screen and (max-width: $bp-m) {
+    grid-column: 1 / -1;
 
+    padding: 3rem 0;
+  }
   &__list {
     display: grid;
     grid-template-columns: min-content max-content;
     gap: 5vh 2rem;
     align-items: center;
+    @media only screen and (max-width: $bp-m) {
+      grid-template-columns: repeat(3, min-content max-content);
+    }
+    @media only screen and (max-width: $bp-s) {
+      grid-template-columns: min-content max-content;
+    }
   }
 
   &__img {

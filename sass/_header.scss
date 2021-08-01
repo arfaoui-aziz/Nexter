@@ -9,13 +9,21 @@
   background-size: cover;
   background-position: center;
   display: grid;
-  grid-template-rows: 1fr min-content minmax(6rem,min-content) 1fr;
+  grid-template-rows: 1fr min-content minmax(6rem, min-content) 1fr;
   grid-template-columns: minmax(min-content, max-content);
   justify-content: center;
   padding-top: 4rem;
   padding-bottom: 8rem;
 
   gap: 1.5rem;
+
+  @media only screen and (max-width: $bp-m) {
+    grid-column: 1 / -1;
+  }
+
+  @media only screen and (max-width: $bp-s) {
+    padding: 5rem;
+  }
 
   &__logo {
     height: 3rem;
